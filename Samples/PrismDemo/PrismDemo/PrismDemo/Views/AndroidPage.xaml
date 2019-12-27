@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismDemo.Views.AndroidPage"
+             Title="{Binding Title}">
+
+    <Frame>
+        <StackLayout>
+            <Label Text="{Binding PlatformInformation.PlatformName}" FontSize="Large" HorizontalTextAlignment="Center"/>
+            <BoxView Color="LightGray" HeightRequest="0.5"/>
+            <WebView Source="https://docs.microsoft.com/en-us/xamarin/android/" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </Frame>
+</ContentPage>

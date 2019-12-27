@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:c="clr-namespace:PrismDemo.Converters"
+             x:Class="PrismDemo.Views.MainPage"
+             Title="{Binding Title}">
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <c:ItemTappedEventArgsConverter x:Key="itemTappedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ListView x:Name="contactList" ItemsSource="{Binding PlatformsList}" SelectionMode="None"
+              SeparatorColor="LightGray" SeparatorVisibility="Default">
+        <ListView.Behaviors>
+            <b:EventToCommandBehavior EventName="ItemTapped" 
+                                      Command="{Binding NavigateToPlatformCommand}"
+                                      EventArgsParameterPath="Item" />
+            <!--<b:EventToCommandBehavior EventName="ItemTapped" 
+                                      Command="{Binding NavigateToPlatformCommand}"
+                                      EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />-->
+        </ListView.Behaviors>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox IsChecked="{Binding IsChecked}" VerticalOptions="Center" />
+                        <Label Grid.Column="1" TextColor="Black" Margin="10,0" Text="{Binding PlatformName}" VerticalOptions="Center">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label" Binding="{Binding IsChecked}" Value="true">
+                                    <Setter Property="TextColor" Value="Black"/>
+                                </DataTrigger>
+                                <DataTrigger TargetType="Label" Binding="{Binding IsChecked}" Value="false">
+                                    <Setter Property="TextColor" Value="DarkGray"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
