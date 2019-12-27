@@ -33,8 +33,10 @@ namespace PrismDemo.ViewModels
         {
             var parameter = new NavigationParameters();
             parameter.Add("platformInfo", platformInfo);
-            if(!platformInfo.IsChecked)
+            //Display alert when an item is tapped with the Checkbox in it unchecked.
+            if (!platformInfo.IsChecked)
             {
+                ////Deep Linking to navigate multiple page at once.
                 //await NavigationService.NavigateAsync("AndroidPage/iOSPage/UWPPage", parameter);
 
                 await DialogService.DisplayAlertAsync("Warning...", "Please ensure to check the platform before you navigate.", "OK");

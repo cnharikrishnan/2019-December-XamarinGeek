@@ -1,7 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using Prism.Services;
 using PrismDemo.Models;
 using System;
 using System.Collections.Generic;
@@ -11,16 +10,15 @@ namespace PrismDemo.ViewModels
 {
     public class UWPPageViewModel : ViewModelBase
     {
-        public UWPPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
-            :base(navigationService, pageDialogService)
+        public UWPPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             Title = "UWP Page";
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
-            base.OnNavigatedTo(parameters);
             PlatformInformation = (PlatformInfo)parameters["platformInfo"];
+            base.OnNavigatedTo(parameters);
         }
     }
 }

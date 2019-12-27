@@ -29,6 +29,11 @@ namespace PrismDemo.ViewModels
             set { SetProperty(ref _platformInformation, value); }
         }
 
+        public ViewModelBase(INavigationService navigationService)
+        {
+            NavigationService = navigationService;
+        }
+
         public ViewModelBase(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             NavigationService = navigationService;

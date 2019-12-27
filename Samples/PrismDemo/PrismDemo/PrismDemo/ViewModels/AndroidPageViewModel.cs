@@ -1,7 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using Prism.Services;
 using PrismDemo.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ namespace PrismDemo.ViewModels
 {
     public class AndroidPageViewModel : ViewModelBase
     {
-        public AndroidPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base (navigationService, pageDialogService)
+        public AndroidPageViewModel(INavigationService navigationService) : base (navigationService)
         {
             Title = "Android Page";
         }
