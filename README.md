@@ -146,7 +146,7 @@ Open the MainPage.xaml and write the below code.
 
 Click the run button and see the below output. 
 
-<img src="Images/06_BasicProjectOutput.png" Width="400" />
+<img src="Images/06_BasicProjectOutput.png" Width="350" />
 
 Let us create few new pages so that when tapping on the list items we can navigate to the corresponding pages. First let us create a new page called "AndroidPage" as shown below. 
 
@@ -438,7 +438,7 @@ private async void OnNavigateToPlatform(PlatformInfo platformInfo)
 
 Run the sample and tap the UWP item from the list. Notice the below output. 
 
-<img src="Images/11_DisplayingAlert.png" Width="400" />
+<img src="Images/11_DisplayingAlert.png" Width="350" />
 
 Deep Linking
 =============
